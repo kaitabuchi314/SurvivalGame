@@ -28,4 +28,9 @@ public class LookOnDrag : MonoBehaviour
             cam.m_YAxis.m_MaxSpeed = 0;
         }
     }
+    void OnApplicationQuit()
+    {
+        cam.m_XAxis.m_MaxSpeed = xSpeed;
+        cam.m_YAxis.m_MaxSpeed = ySpeed;
+    }
 }
