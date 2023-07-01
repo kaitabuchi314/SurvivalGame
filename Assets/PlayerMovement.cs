@@ -22,9 +22,10 @@ public class PlayerMovement : MonoBehaviour
         Vector3 movement = (transform.forward * verticalInput * speed) * Time.deltaTime;
         rb.MovePosition(rb.position + movement);
         isMoving = Mathf.Abs(verticalInput) > 0;
-
+        
         animator.SetFloat("Running", Mathf.Abs(verticalInput * speed));
-        animator.SetBool("Idle", !isMoving);
+        //animator.SetBool("Idle", !isMoving);
+        Debug.Log(animator.GetFloat("Running"));
 
         if (isGrounded && Input.GetButtonDown("Jump")) // Check if player is on the ground and jump button is pressed
         {
